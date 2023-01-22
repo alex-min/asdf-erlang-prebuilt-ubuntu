@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
+. /etc/os-release
 
 download_hex_pm_builds() {
-  local releases_url='https://repo.hex.pm/builds/otp/ubuntu-20.04/builds.txt'
+  local releases_url="https://repo.hex.pm/builds/otp/ubuntu-$VERSION_ID/builds.txt"
 
   if ! curl -fs $releases_url; then
     cat >&2 <<EOS

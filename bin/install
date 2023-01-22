@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+. /etc/os-release
 
 install_erlang() {
   local install_type=$1
@@ -79,7 +80,7 @@ get_download_url_for_version() {
     version="OTP-${version}"
   fi
 
-  echo "https://repo.hex.pm/builds/otp/ubuntu-20.04/${version}.tar.gz"
+  echo "https://repo.hex.pm/builds/otp/ubuntu-$VERSION_ID/${version}.tar.gz"
 }
 
 
